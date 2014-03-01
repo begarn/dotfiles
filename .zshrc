@@ -8,4 +8,4 @@
 # [[ -f ~/.zsh/local.zsh ]] && source ~/.zsh/local.zsh
 # [[ -f /opt/boxen/env.sh ]] && source /opt/boxen/env.sh
 
-# source ~/.zsh/prompt.zsh
+source ~/.zsh/prompt.zsh
