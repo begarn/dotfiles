@@ -1,1 +1,2 @@
-export PS1="%m@%n %d$ "
+autoload -U promptinit && promptinit
+prompt clint
