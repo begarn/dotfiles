@@ -3,6 +3,7 @@ bindkey '^[[1~' beginning-of-line
 bindkey '^[[4~' end-of-line
 
 autoload colors; colors
+autoload compinit; compinit
 
 typeset -ga preexec_functions
 typeset -ga precmd_functions
