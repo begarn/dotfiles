@@ -1,14 +1,11 @@
-# Complétion 
-autoload -U compinit && compinit
+# Bind Fn-left & Fn-right to home & end
+bindkey '^[[1~' beginning-of-line
+bindkey '^[[4~' end-of-line
 
-# Correction des commandes
-setopt correctall
+autoload colors; colors
 
-autoload -U colors && colors
-
-# disable beep
-set NO_BEEP
-
-# Prevent from putting duplicate lines in the history
-setopt HIST_IGNORE_DUPS
-
+typeset -ga preexec_functions
+typeset -ga precmd_functions
+typeset -ga chpwd_functions
+setopt PROMPT_SUBST
+setopt NO_BEEP
