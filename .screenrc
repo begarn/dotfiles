@@ -34,3 +34,10 @@ bindkey -m "^[[6;2~" stuff ^f
 
 # Change title
 bind T title
+
+# switch screen F{1,2,3,4,5}
+bindkey "^[[11~" select 0
+bindkey "^[[12~" select 1
+bindkey "^[[13~" select 2
+bindkey "^[[14~" select 3
+bindkey "^[[15~" select 4
