@@ -10,6 +10,9 @@ hardstatus alwayslastline "%{=b}%{M} Screens: %{= y}%-Lw%{= G}%n %t%{= y}%+Lw %{
 activity "Activity in %t(%n)"
 shelltitle ""
 
+# vim compatibility
+altscreen on
+
 # change command character from ctrl-a to ctrl-w (emacs users may want this)
 escape ^Ww
 
