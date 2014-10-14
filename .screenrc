@@ -10,7 +10,7 @@ hardstatus alwayslastline "%{=b}%{M} Screens: %{= y}%-Lw%{= G}%n %t%{= y}%+Lw %{
 activity "Activity in %t(%n)"
 shelltitle ""
 
-# change command character from ctrl-a to ctrl-b (emacs users may want this)
+# change command character from ctrl-a to ctrl-w (emacs users may want this)
 escape ^Ww
 
 # remove dangerous binding
