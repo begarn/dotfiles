@@ -15,7 +15,8 @@ export PATH
 # https://github.com/jimeh/git-aware-prompt
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
-export PS1="\u@\h:\[$txtred\]\$?\[$txtrst\]:\W\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\[$txtgrn\]\$\[$txtrst\] "
+#export PS1="\u@\h:\[$txtred\]\$?\[$txtrst\]:\W\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\[$txtgrn\]\$\[$txtrst\] "
+export PS1="\u@$txtgrn\]\h$txtrst\]:\[$txtred\]\$?\[$txtrst\]:\W\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\[$txtgrn\] »\[$txtrst\] "
 
 
 
