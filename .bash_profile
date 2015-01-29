@@ -11,6 +11,7 @@ PATH=$PATH:$HOME/bin
 #PS1="\u@\033[0;32m\h\033[0m:\W$ "
 #export PATH PS1
 export PATH
+export LANG=C
 
 # https://github.com/jimeh/git-aware-prompt
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
