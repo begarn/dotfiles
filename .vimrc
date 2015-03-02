@@ -7,3 +7,4 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set showmatch
+set encoding=utf-8
