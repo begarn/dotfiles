@@ -1,6 +1,54 @@
 # ARNO ZSH theme inpired by AVIT ZSH Theme
 
+local ret_status="%(?:%{$fg_bold[green]%}»%{$reset_color%} :%{$fg_bold[red]%}»%{$reset_color%} )"
+
 PROMPT='
+$(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
+${ret_status}'
+
+PROMPT2='%{$fg[grey]%}◀%{$reset_color%} '
+
+#RPROMPT='$(_vi_status)%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
+RPROMPT=""
+
+local _current_dir="%{$fg[blue]%}%3~%{$reset_color%} "
+local _return_status="%{$fg[red]%}%(?..⍉)%{$reset_color%}"
+local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
+
+function _user_host() {
+  if [[ -n $SSH_CONNECTION ]]; then
+    me="%n@%m"
+  elif [[ $LOGNAME != $USER ]]; then
+    me="%n"
+  fi
+  if [[ -n $me ]]; then
+    echo "%{$fg[cyan]%}$me%{$reset_color%}:"
+  fi
+}
+
+function _vi_status() {
+  if {echo $fpath | grep -q "plugins/vi-mode"}; then
+    echo "$(vi_mode_prompt_info)"
+  fi
+}
+
+function _ruby_version() {
+  if {echo $fpath | grep -q "plugins/rvm"}; then
+    echo "%{$fg[grey]%}$(rvm_prompt_info)%{$reset_color%}"
+  fi
+}
+
+# Determine the time since last commit. If branch is clean,
+# use a neutral color, otherwise colors will vary according to time.
+function _git_time_since_commit() {
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    # Only proceed if there is actually a commit.
+    if [[ $(git log 2>&1 > /dev/null | grep -c "^fatal: bad default revision") == 0 ]]; then
+      # Get the last commit.
+      last_commit=$(git log --pretty=format:'%at' -1 2> /dev/null)
+      now=$(date +%s)
+      seconds_since_last_commit=$((now-last_commit))
+
       # Totals
       minutes=$((seconds_since_last_commit / 60))
       hours=$((seconds_since_last_commit/3600))
