@@ -19,6 +19,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'chriskempson/base16-vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'bbatsov/rubocop'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'rodjek/vim-puppet'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -28,25 +31,16 @@ filetype plugin indent on    " required
 "
 " Brief help
 " :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PluginInstall    - installs plugins; append  to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append  to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append  to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" Enable vim-airline
-set laststatus=2
-set t_Co&
-set background=dark
-"let base16colorspace = 256
-let g:airline_theme='solarized'
-
-"colorscheme base16-spacemacs
-"colorscheme molokai
 
 " personal settings
-syntax on
+"syntax on
 set nohlsearch
 set incsearch
 set expandtab
@@ -54,3 +48,17 @@ set tabstop=2
 set shiftwidth=2
 set showmatch
 set encoding=utf-8
+set nu
+
+" Enable vim-airline
+set laststatus=2
+set t_Co&
+set noshowmode
+let g:rehash256 = 1
+let g:airline_theme='solarized'
+
+" enable solarized theme
+syntax enable
+set background=dark
+colorscheme solarized
+
