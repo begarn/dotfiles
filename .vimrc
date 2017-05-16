@@ -51,6 +51,10 @@ set encoding=utf-8
 set nu
 
 " Enable vim-airline
+" On win$ system do not forget to replace L6 of
+" .vim/bundle/vim-airline/autoload/airline/highlighter.vim
+" by: 
+" let s:is_win32term = 1
 set laststatus=2
 set t_Co&
 set noshowmode
